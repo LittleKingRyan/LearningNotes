@@ -23,11 +23,11 @@ node.js, replace the code in step 3 with the following
 if you have set the path when installing node.js to
 usr/local/bin/node
 
-''' javascript
+```javascript
 {
     "cmd": ["/usr/local/bin/node", "$file", "$file_base_name"],
     "working_dir": "${project_path:${folder}}",
     "selector": "*.js"
 }
-'''
+```
 
