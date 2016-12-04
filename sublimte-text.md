@@ -14,7 +14,7 @@ The guy who made this video is awesome, by the way.
 
 Being able to write and execute snippets of code inside
 of Sublime Text not only saves us from switching between
-different windoes but also allows us to focus on the code
+different windows but also allows us to focus on the code
 that we write. To do this with JavaScript, please refer
 to this link:
 http://www.wikihow.com/Create-a-Javascript-Console-in-Sublime-Text
