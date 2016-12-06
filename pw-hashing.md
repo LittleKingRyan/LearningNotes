@@ -3,8 +3,7 @@
 ## This is a learning note from cs253 of Udacity
 Python has an awesome library called hashlib, which contains
 a bunch of existing hashing algorithms, like md5, sha256, etc.
-
-In this note, I will talk about hashing with salts.
+This note is about hashing with salts.
 
 ### First thing first, what's a hashing algorithm?
 A hashing algorithm takes a string (let's just consider string)
@@ -12,7 +11,9 @@ as input and returns a longer, harder to 'understand' string as
 the secret version of the input string.
 For example, consider a hashing algorithm H(x):
 
+```
 H('hello') = '5d41402abc4b2a76b9719d911017c592'
+```
 
 Now, given the same string as input, H(x) will generate the same
 output. One example can be:
