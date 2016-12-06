@@ -1,5 +1,4 @@
 # Password hashing
-## Good to know...
 ## This is a learning note for Udacity's cs253
 Python has an awesome library called hashlib, which contains
 a bunch of existing hashing algorithms, like md5, sha256, etc.
@@ -53,9 +52,9 @@ it would be insecure.
 To improve the above algorithm, we now add a salt as a part of the
 hashing process. Basically, a salt is a fixed length of randomly
 generated string that is to be concatenated with the string that we
-want to hash as a way to the output string even harder to decode.
+want to hash as a way to make the output string even harder to decode.
 
-Consider the following code
+Consider the following code:
 ```python
 import random
 import string
@@ -68,8 +67,8 @@ def make_salt():
 
 
 def make_pw_hash(name, pw, salt=None):
-    # if salt is not given, then generate salt and use the generated
-    # salt to create a hashed string
+    # take a user's name, password and a salt to create a hashed string
+    # if salt is not given, a salt will be generated and used
     if not salt:
         salt = make_salt()
     h = hashlib.sha256(name + pw + salt).hexdigest()
@@ -77,9 +76,18 @@ def make_pw_hash(name, pw, salt=None):
 
 
 def valid_pw(name, pw, h):
+    # we can use the username to select the hashed password
+    # get the salt part of the hashed password, use it with name
+    # and password to make the hashed password
+    # if this hashed password equals the hashed password stored
+    # then true will be returned
     try:
         salt = h.split(',')[1]
         return h == make_pw_hash(name, pw, salt)
     except IndexError:
         return False
 ```
+
+It's nice to know what hashing with salts means and how it might be
+implemented. Nevertheless, modules like Bcrypt are encouraged to be
+used for performance reason.
