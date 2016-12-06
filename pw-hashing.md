@@ -1,6 +1,6 @@
 # Password hashing
 ## Good to know...
-## This is a learning note from cs253 of Udacity
+## This is a learning note for Udacity's cs253
 Python has an awesome library called hashlib, which contains
 a bunch of existing hashing algorithms, like md5, sha256, etc.
 This note is about hashing with salts.
@@ -10,9 +10,9 @@ A hashing algorithm takes a string (let's just consider string)
 as input and returns a longer, harder to 'understand' string as
 the secret version of the input string.
 The characteristics of a hashing algorithm are:
-1. difficult to generate a specific output string
-2. infeasible to find input string for a given output string
-3. can't modify input string without modifying output string
+* difficult to generate a specific output string
+* infeasible to find input string for a given output string
+* can't modify input string without modifying output string
 
 For example, consider a hashing algorithm H(x):
 
